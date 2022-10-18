@@ -39,9 +39,9 @@
   <div class="form-group">
     <label>Выберите парихмахера</label>
     <select name="barber" id="cars">
-      <option value="Walt">Walt</option>
-      <option value="Jessie">Jesse</option>
-      <option value="Gaz">Gaz</option>
+      <option <%= @barber == 'Walt' ? 'selected' : ''%>>Walt</option>
+      <option <%= @barber == 'Jesse' ? 'selected' : ''%>>Jesse</option>
+      <option <%= @barber == 'Gaz' ? 'selected' : ''%>>Gaz</option>
     </select>
   </div>
 
