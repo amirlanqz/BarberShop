@@ -67,6 +67,8 @@ post '/visit' do
 			)
 		values(?, ?, ?, ?, ?)', [@name, @phone, @date, @color, @barber]
 
+	
+
 	erb "Ok, we write your name and date, #{@name} we wait for you..."
 end
 
@@ -75,6 +77,9 @@ get '/contacts' do
 end
 
 get '/showusers' do
+	$db.results_as_hash = true
+	@results = $db.execute 'select * from Users order by id desc'
+
 	erb :showusers
 end
 
